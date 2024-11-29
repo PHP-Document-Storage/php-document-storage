@@ -1,0 +1,21 @@
+{
+    "name": "devnix/php-document-store",
+    "type": "library",
+    "require-dev": {
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^11.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Devnix\\PhpDocumentStore\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pablo Largo Mohedano",
+            "email": "devnix.code@gmail.com"
+        }
+    ],
+    "require": {}
+}
