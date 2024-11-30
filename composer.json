@@ -11,10 +11,18 @@
     "autoload": {
         "psr-4": {
             "Devnix\\PhpDocumentStore\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Devnix\\PhpDocumentStore\\Tests\\": "tests/"
         }
     },
     "require": {
-        "php": "^8.1"
+        "php": "^8.2"
     },
     "require-dev": {
         "phpstan/phpstan": "^2.0",
