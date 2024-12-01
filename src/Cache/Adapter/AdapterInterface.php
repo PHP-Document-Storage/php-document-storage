@@ -17,4 +17,9 @@ interface AdapterInterface
      * @param non-empty-string $key
      */
     public function get(string $key): ?DocumentInterface;
+
+    /**
+     * @param non-empty-string $key
+     */
+    public function exists(string $key): bool;
 }

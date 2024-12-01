@@ -1,4 +1,19 @@
+includes:
+    - ../vendor/phpstan/phpstan-phpunit/extension.neon
+    - ../vendor/phpstan/phpstan-phpunit/rules.neon
+
 parameters:
     level: 10
     paths:
         - ../src
+        - ../tests
+        - ../types
+
+    exceptions:
+        uncheckedExceptionClasses:
+            - PHPUnit\Exception
+        check:
+            missingCheckedExceptionInThrows: true
+            tooWideThrowType: true
+        implicitThrows: false
+        reportUncheckedExceptionDeadCatch: false

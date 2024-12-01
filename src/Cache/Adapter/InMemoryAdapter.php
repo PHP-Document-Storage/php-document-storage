@@ -24,10 +24,18 @@ final class InMemoryAdapter implements AdapterInterface
 
     public function get(string $key): ?DocumentInterface
     {
-        if (!array_key_exists($key, $this->documents)) {
+        if (!$this->exists($key)) {
             return null;
         }
 
         return $this->documents[$key];
+    }
+
+    /**
+     * @param non-empty-string $key
+     */
+    public function exists(string $key): bool
+    {
+        return array_key_exists($key, $this->documents);
     }
 }
