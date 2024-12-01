@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace Devnix\DocumentStore\Tests\Cache\Mocks;
 
 use Devnix\DocumentStore\Cache\DocumentInterface;
@@ -23,6 +22,5 @@ readonly class Views implements DocumentInterface
         return new self($this->value + 1);
     }
 }
-
 
 // $cache->get(Visits::class, default: new Visits(0));

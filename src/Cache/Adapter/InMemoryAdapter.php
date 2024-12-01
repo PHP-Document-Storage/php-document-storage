@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Devnix\DocumentStore\Cache\Adapter;
 
 use Devnix\DocumentStore\Cache\DocumentInterface;
-use function Devnix\DocumentStore\Internal\suffix;
 
 final class InMemoryAdapter implements AdapterInterface
 {
@@ -23,7 +22,7 @@ final class InMemoryAdapter implements AdapterInterface
         $this->documents[$key] = $document;
     }
 
-    public function get(string $key): DocumentInterface|null
+    public function get(string $key): ?DocumentInterface
     {
         if (!array_key_exists($key, $this->documents)) {
             return null;

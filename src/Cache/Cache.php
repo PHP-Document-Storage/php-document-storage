@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Devnix\DocumentStore\Cache;
 
-use Devnix\DocumentStore\Cache\CacheInterface;
 use function Devnix\DocumentStore\Internal\suffix;
 
 final class Cache implements CacheInterface
@@ -20,9 +19,9 @@ final class Cache implements CacheInterface
         $this->adapter->set($key, $document);
     }
 
-    public function get(string $document, ?string $suffix = null, DocumentInterface $default = null): DocumentInterface|null
+    public function get(string $document, ?string $suffix = null, ?DocumentInterface $default = null): ?DocumentInterface
     {
-        $key = $document::identifier() .suffix($suffix);
+        $key = $document::identifier().suffix($suffix);
 
         // @phpstan-ignore return.type
         return $this->adapter->get($key) ?? $default;

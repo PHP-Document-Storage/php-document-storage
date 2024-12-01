@@ -21,21 +21,21 @@ final class InMemoryAdapterTest extends Framework\TestCase
         $this->cache = new Cache(new InMemoryAdapter());
     }
 
-    public function test_it_retrieves_a_default_value_without_prefix(): void
+    public function testItRetrievesADefaultValueWithoutPrefix(): void
     {
         $views = $this->cache->get(Views::class, default: new Views(69420));
 
         self::assertSame(69420, $views->value);
     }
 
-    public function test_it_retrieves_a_null_value_without_prefix(): void
+    public function testItRetrievesANullValueWithoutPrefix(): void
     {
         $views = $this->cache->get(Views::class);
 
         self::assertNull($views->value);
     }
 
-    public function test_read_and_write_with_and_without_prefix(): void
+    public function testReadAndWriteWithAndWithoutPrefix(): void
     {
         $views = $this->cache->get(Views::class);
         self::assertNull($views->value);

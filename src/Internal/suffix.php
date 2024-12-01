@@ -9,7 +9,7 @@ namespace Devnix\DocumentStore\Internal;
  *
  * @return non-empty-string|null
  */
-function suffix(string|null $suffix): string|null
+function suffix(?string $suffix): ?string
 {
     if (null !== $suffix) {
         return '.'.$suffix;

@@ -16,5 +16,5 @@ interface AdapterInterface
     /**
      * @param non-empty-string $key
      */
-    public function get(string $key): DocumentInterface|null;
+    public function get(string $key): ?DocumentInterface;
 }

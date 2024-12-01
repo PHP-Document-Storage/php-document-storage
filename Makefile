@@ -6,3 +6,9 @@ static-analysis: ## Execute static analysis
 
 unit-tests: ## Execute unit tests
 	./vendor/bin/phpunit -c etc/phpunit.xml
+
+coding-style-check: ## Validates coding style rules
+	./vendor/bin/php-cs-fixer fix --diff --dry-run --verbose --config etc/.php-cs-fixer.php
+
+coding-style-fix: ## Fixes coding style automiatically
+	./vendor/bin/php-cs-fixer fix --verbose --config etc/.php-cs-fixer.php
