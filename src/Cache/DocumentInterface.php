@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Devnix\PhpDocumentStore\Cache;
+namespace Devnix\DocumentStore\Cache;
 
-use Devnix\PhpDocumentStore\DocumentInterface as BaseDocumentInterface;
+use Devnix\DocumentStore\DocumentInterface as BaseDocumentInterface;
 
 interface DocumentInterface extends BaseDocumentInterface
 {

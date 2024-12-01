@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devnix\PhpDocumentStore;
+namespace Devnix\DocumentStore;
 
 interface VersionableInterface
 {

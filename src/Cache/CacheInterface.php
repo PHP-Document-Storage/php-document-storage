@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devnix\PhpDocumentStore\Cache;
+namespace Devnix\DocumentStore\Cache;
 
 interface CacheInterface
 {

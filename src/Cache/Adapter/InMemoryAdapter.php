@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Devnix\PhpDocumentStore\Cache\Adapter;
+namespace Devnix\DocumentStore\Cache\Adapter;
 
-use Devnix\PhpDocumentStore\Cache\DocumentInterface;
-use function Devnix\PhpDocumentStore\Internal\suffix;
+use Devnix\DocumentStore\Cache\DocumentInterface;
+use function Devnix\DocumentStore\Internal\suffix;
 
 final class InMemoryAdapter implements AdapterInterface
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devnix\PhpDocumentStore\Session;
+namespace Devnix\DocumentStore\Session;
 
 interface AttributeBagInterface
 {

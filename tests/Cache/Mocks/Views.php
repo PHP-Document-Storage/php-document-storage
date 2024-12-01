@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Devnix\PhpDocumentStore\Tests\Cache\Mocks;
+namespace Devnix\DocumentStore\Tests\Cache\Mocks;
 
-use Devnix\PhpDocumentStore\Cache\DocumentInterface;
+use Devnix\DocumentStore\Cache\DocumentInterface;
 
 readonly class Views implements DocumentInterface
 {

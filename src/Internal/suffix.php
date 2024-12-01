@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devnix\PhpDocumentStore\Internal;
+namespace Devnix\DocumentStore\Internal;
 
 /**
  * @param non-empty-string|null $suffix

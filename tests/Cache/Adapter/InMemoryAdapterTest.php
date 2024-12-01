@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Cache\Adapter;
 
-use Devnix\PhpDocumentStore\Cache\Adapter\InMemoryAdapter;
-use Devnix\PhpDocumentStore\Cache\Cache;
-use Devnix\PhpDocumentStore\Tests\Cache\Mocks\Views;
+use Devnix\DocumentStore\Cache\Adapter\InMemoryAdapter;
+use Devnix\DocumentStore\Cache\Cache;
+use Devnix\DocumentStore\Tests\Cache\Mocks\Views;
 use PHPUnit\Framework;
 
 #[Framework\Attributes\CoversClass(InMemoryAdapter::class)]
 #[Framework\Attributes\CoversClass(Cache::class)]
-#[Framework\Attributes\CoversFunction('Devnix\PhpDocumentStore\Internal\suffix')]
+#[Framework\Attributes\CoversFunction('Devnix\DocumentStore\Internal\suffix')]
 final class InMemoryAdapterTest extends Framework\TestCase
 {
     private Cache $cache;

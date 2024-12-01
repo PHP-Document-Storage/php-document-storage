@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Devnix\PhpDocumentStore\Cache;
+namespace Devnix\DocumentStore\Cache;
 
-use Devnix\PhpDocumentStore\Cache\CacheInterface;
-use function Devnix\PhpDocumentStore\Internal\suffix;
+use Devnix\DocumentStore\Cache\CacheInterface;
+use function Devnix\DocumentStore\Internal\suffix;
 
 final class Cache implements CacheInterface
 {

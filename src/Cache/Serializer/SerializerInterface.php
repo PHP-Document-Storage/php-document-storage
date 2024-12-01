@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Devnix\PhpDocumentStore\Cache\Serializer;
+namespace Devnix\DocumentStore\Cache\Serializer;
 
 interface SerializerInterface
 {

@@ -1,5 +1,5 @@
 {
-    "name": "devnix/php-document-store",
+    "name": "devnix/document-store",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Devnix\\PhpDocumentStore\\": "src/"
+            "Devnix\\DocumentStore\\": "src/"
         },
         "files": [
             "src/functions.php"
@@ -18,7 +18,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Devnix\\PhpDocumentStore\\Tests\\": "tests/"
+            "Devnix\\DocumentStore\\Tests\\": "tests/"
         }
     },
     "require": {

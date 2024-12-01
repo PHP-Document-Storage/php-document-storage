@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Devnix\PhpDocumentStore\Cache\Adapter;
+namespace Devnix\DocumentStore\Cache\Adapter;
 
-use Devnix\PhpDocumentStore\Cache\DocumentInterface;
+use Devnix\DocumentStore\Cache\DocumentInterface;
 
 interface AdapterInterface
 {
