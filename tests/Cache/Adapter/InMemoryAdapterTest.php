@@ -253,6 +253,7 @@ final class InMemoryAdapterTest extends Framework\TestCase
             fn (Views $views) => $views->increment(),
             '1',
         );
+        throw new \RuntimeException('manos de arbol');
 
         self::assertEquals(new Views(43), $views1);
 
