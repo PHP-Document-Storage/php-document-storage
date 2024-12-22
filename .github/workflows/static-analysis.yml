@@ -1,0 +1,38 @@
+name: "unit tests"
+
+on:
+  pull_request: ~
+  push: ~
+
+jobs:
+  unit-tests:
+    name: "unit tests"
+
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "checkout"
+        uses: "actions/checkout@v4"
+
+      - name: "installing PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "8.2"
+          ini-values: memory_limit=-1
+          tools: composer:v2, cs2pr
+
+      - name: "caching dependencies"
+        uses: "actions/cache@v4"
+        with:
+          path: |
+            ~/.composer/cache
+            vendor
+          key: "php-${{ matrix.php-version }}"
+          restore-keys: "php-${{ matrix.php-version }}"
+
+      - name: "installing dependencies"
+        run: |
+          make install -j10
+
+      - name: "running static analysis"
+        run: make static-analysis
