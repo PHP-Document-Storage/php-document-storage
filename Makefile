@@ -12,3 +12,6 @@ coding-style-check: ## Validates coding style rules
 
 coding-style-fix: ## Fixes coding style automiatically
 	./vendor/bin/php-cs-fixer fix --verbose --config etc/.php-cs-fixer.php
+
+install: ## Install project dependencies
+	composer install
