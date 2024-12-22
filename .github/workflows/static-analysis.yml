@@ -1,12 +1,12 @@
-name: "unit tests"
+name: "static analysis"
 
 on:
   pull_request: ~
   push: ~
 
 jobs:
-  unit-tests:
-    name: "unit tests"
+  static-analysis:
+    name: "static analysis"
 
     runs-on: "ubuntu-latest"
 
