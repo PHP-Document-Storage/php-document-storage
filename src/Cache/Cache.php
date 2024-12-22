@@ -60,4 +60,20 @@ final class Cache implements CacheInterface
 
         return $document;
     }
+
+
+    public function update(string $documentClassName, \Closure $callback, ?string $suffix = null, ?DocumentInterface $default = null): DocumentInterface
+    {
+        $document = $this->tryUpdate($documentClassName, $callback, $suffix, $default);
+
+        if (null === $document) {
+            $key = $documentClassName::identifier().suffix($suffix);
+
+            throw new Exception\DocumentNotFoundException(
+                sprintf('Could not find a document with key "%s" for class "%s"', $key, $documentClassName)
+            );
+        }
+
+        return $document;
+    }
 }

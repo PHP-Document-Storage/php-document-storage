@@ -193,4 +193,76 @@ final class InMemoryAdapterTest extends Framework\TestCase
 
         self::assertEquals(new Views(44), $views1);
     }
+
+    /**
+     * @throws DocumentNotFoundException
+     */
+    public function testUpdateNonExisingDocument(): void
+    {
+        self::expectException(DocumentNotFoundException::class);
+        self::expectExceptionMessage('Could not find a document with key "module.submodule.views" for class "Devnix\DocumentStore\Tests\Cache\Mocks\Views"');
+
+        $this->cache->update(
+            Views::class,
+            fn (Views $views) =>  $views->increment(),
+        );
+    }
+
+    /**
+     * @throws DocumentNotFoundException
+     */
+    public function testUpdateNonExisingDocumentWithDefaultValue(): void
+    {
+        $views = $this->cache->update(
+            Views::class,
+            fn (Views $views) =>  $views->increment(),
+            null,
+            new Views(26),
+        );
+
+        self::assertEquals(new Views(27), $views);
+    }
+
+    /**
+     * @throws DocumentNotFoundException
+     */
+    public function testUpdateExistingDocument(): void
+    {
+        $this->cache->set(new Views(69420));
+
+        $views = $this->cache->update(
+            Views::class,
+            fn (Views $views) => $views->increment(),
+            null,
+        );
+
+        self::assertEquals(new Views(69421), $views);
+
+        $views = $this->cache->update(
+            Views::class,
+            fn (Views $views) => $views->increment(),
+            default: new Views(0)
+        );
+
+        self::assertEquals(new Views(69422), $views);
+
+        $this->cache->set(new Views(42), '1');
+
+        $views1 = $this->cache->update(
+            Views::class,
+            fn (Views $views) => $views->increment(),
+            '1',
+        );
+
+        self::assertEquals(new Views(43), $views1);
+
+        $views1 = $this->cache->update(
+            Views::class,
+            fn (Views $views) => $views->increment(),
+            '1',
+            new Views(0),
+        );
+
+        self::assertEquals(new Views(44), $views1);
+    }
 }
