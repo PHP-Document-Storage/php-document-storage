@@ -43,14 +43,14 @@ interface CacheInterface
     public function tryGet(string $documentClassName, ?string $suffix = null, ?DocumentInterface $default = null): ?DocumentInterface;
 
     /**
-     * @param class-string<DocumentInterface>      $documentClassName
-     * @param non-empty-string|null $suffix
+     * @param class-string<DocumentInterface> $documentClassName
+     * @param non-empty-string|null           $suffix
      */
     public function exists(string $documentClassName, ?string $suffix = null): bool;
 
     /**
      * Executes the callback closure and replaces the document with the returned document from the closure.
-     * If the document does not exist, the default document will be provided to the callback
+     * If the document does not exist, the default document will be provided to the callback.
      *
      * @template TDocument of DocumentInterface
      *

@@ -99,7 +99,8 @@ final class InMemoryAdapterTest extends Framework\TestCase
 
     /**
      * @param class-string<DocumentInterface> $documentClass
-     * @param non-empty-string|null $prefix
+     * @param non-empty-string|null           $prefix
+     *
      * @throws DocumentNotFoundException
      */
     #[Framework\Attributes\DataProvider('providerGetKeyThatDoesNotExist')]
@@ -204,7 +205,7 @@ final class InMemoryAdapterTest extends Framework\TestCase
 
         $this->cache->update(
             Views::class,
-            fn (Views $views) =>  $views->increment(),
+            fn (Views $views) => $views->increment(),
         );
     }
 
@@ -215,7 +216,7 @@ final class InMemoryAdapterTest extends Framework\TestCase
     {
         $views = $this->cache->update(
             Views::class,
-            fn (Views $views) =>  $views->increment(),
+            fn (Views $views) => $views->increment(),
             null,
             new Views(26),
         );
