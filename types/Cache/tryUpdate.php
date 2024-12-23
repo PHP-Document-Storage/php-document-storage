@@ -7,7 +7,6 @@ use Devnix\DocumentStore\Tests\Cache\Mocks\Views;
 
 function updateWithoutDefaultValue(CacheInterface $cache): ?Views
 {
-    \PHPStan\dumpType($cache);
     return $cache->tryUpdate(Views::class, fn (Views $views) => $views->increment());
 }
 
