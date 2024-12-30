@@ -1,4 +1,4 @@
-help:                                                                           ## shows this help
+help: ## shows this help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_\-\.]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 static-analysis: ## Execute static analysis
@@ -12,3 +12,6 @@ coding-style-check: ## Validates coding style rules
 
 coding-style-fix: ## Fixes coding style automiatically
 	./vendor/bin/php-cs-fixer fix --verbose --config etc/.php-cs-fixer.php
+
+install: ## Install project dependencies
+	composer install

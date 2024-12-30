@@ -26,9 +26,7 @@ final class Cache implements CacheInterface
         if (null === $document) {
             $key = $documentClassName::identifier().suffix($suffix);
 
-            throw new Exception\DocumentNotFoundException(
-                sprintf('Could not find a document with key "%s" for class "%s"', $key, $documentClassName)
-            );
+            throw new Exception\DocumentNotFoundException(sprintf('Could not find a document with key "%s" for class "%s"', $key, $documentClassName));
         }
 
         return $document;
@@ -61,7 +59,6 @@ final class Cache implements CacheInterface
         return $document;
     }
 
-
     public function update(string $documentClassName, \Closure $callback, ?string $suffix = null, ?DocumentInterface $default = null): DocumentInterface
     {
         $document = $this->tryUpdate($documentClassName, $callback, $suffix, $default);
@@ -69,9 +66,7 @@ final class Cache implements CacheInterface
         if (null === $document) {
             $key = $documentClassName::identifier().suffix($suffix);
 
-            throw new Exception\DocumentNotFoundException(
-                sprintf('Could not find a document with key "%s" for class "%s"', $key, $documentClassName)
-            );
+            throw new Exception\DocumentNotFoundException(sprintf('Could not find a document with key "%s" for class "%s"', $key, $documentClassName));
         }
 
         return $document;
